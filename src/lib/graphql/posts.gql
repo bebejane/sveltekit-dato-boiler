@@ -1,0 +1,25 @@
+#import "./fragments/ImageFragment.gql"
+
+query AllPosts {
+	posts: allPosts {
+		id
+		title
+		content
+		slug
+		image {
+			...ImageFragment
+		}
+	}
+}
+
+query Post($slug: String) {
+	post(filter: { slug: { eq: $slug } }) {
+		id
+		title
+		content
+		slug
+		image {
+			...ImageFragment
+		}
+	}
+}

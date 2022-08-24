@@ -1,0 +1,23 @@
+#import "./ImageFragment.gql"
+
+fragment SiteFragment on Site {
+  favicon: faviconMetaTags {
+    attributes
+    content
+    tag
+  }
+  globalSeo {
+    facebookPageUrl
+    siteName
+    titleSuffix
+    twitterAccount
+    fallbackSeo {
+      description
+      title
+      twitterCard
+      image {
+        ...ImageFragment
+      }
+    }
+  }
+}

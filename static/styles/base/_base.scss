@@ -1,0 +1,84 @@
+/*********************
+GENERAL STYLES
+*********************/
+
+body {
+	width: 100%;
+	color: $black;
+	background-color: $black;
+	font-family: $body-font;
+	-webkit-font-smoothing: antialiased;
+	font-feature-settings: "liga", "kern";
+	overflow-x: hidden;
+	overscroll-behavior-y: none;
+	font-family: "Protokoll";
+	text-rendering: optimizeLegibility;
+	margin:0;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+	-webkit-appearance: none;
+	background: #fff;
+}
+
+::-webkit-scrollbar:vertical {
+	width: 10px;
+}
+
+::-webkit-scrollbar:horizontal {
+	height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: $black;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+p {
+	margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	margin: 0;
+	font-weight: normal;
+}
+
+/* Images */
+
+iframe {
+	border: none;
+}
+
+/*********************
+LINK STYLES
+*********************/
+
+div a {
+	text-decoration: none;
+	color: $black;
+}
+
+a {
+	text-decoration: none;
+
+	&:hover {
+		color: black;
+		//border-bottom: 1px solid $black;
+	}
+	&:visited {
+		color: $black;
+	}
+}

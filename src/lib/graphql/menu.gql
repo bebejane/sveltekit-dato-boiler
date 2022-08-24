@@ -1,0 +1,12 @@
+query Menu {
+	allMenus(filter: {parent: {exists: "*"}}) {
+    title
+    children {
+      link{
+      	__typename
+      	id
+    	}
+      title
+    }
+  }
+}

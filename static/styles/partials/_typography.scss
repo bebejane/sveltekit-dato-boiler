@@ -1,0 +1,47 @@
+body,
+html {
+  font-size: 16px;
+  line-height: 1.25em;
+  color: $black;
+
+  @include mq($from: tablet) {
+    font-size: 20px;
+  }
+  @include mq($from: wide) {
+    font-size: 24px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 1rem;
+}
+
+h2 {
+  border-top: 1px solid black;
+  padding-top: 1.2rem;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  line-height: 1;
+}
+
+h3 {
+  padding-top: 0.2em;
+}
+
+h3,
+h2 {
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1rem !important;
+}
