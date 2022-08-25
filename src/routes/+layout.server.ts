@@ -1,9 +1,9 @@
 import { client } from "$lib/client";
-import { MenuDocument } from "$lib/graphql";
+import { GlobalDocument } from "$lib/graphql";
 
 export async function load() {
 
-  const { data: { allMenus } } = await client.query(MenuDocument).result() as { data: MenuQuery }
+  const { data: { site } } = await client.query(GlobalDocument).result() as { data: GlobalQuery }
 
-  return { allMenus }
+  return { site }
 }

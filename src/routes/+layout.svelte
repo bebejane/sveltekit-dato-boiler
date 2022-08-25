@@ -1,5 +1,5 @@
 <script>
-	import '../styles/index.scss';
+	import '../@styles/index.scss';
 </script>
 
 <svelte:head />

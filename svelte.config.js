@@ -3,18 +3,16 @@ import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Consult https://github.com/sveltejs/svelte-preprocess
-	// for more information about preprocessors
 	compilerOptions: {hydratable:true},
 	preprocess: preprocess({
 		scss: {
 			prependData: `
 				@use "sass:math";
-				@import "./src/styles/partials/mediaqueries"; 
-				@import "./src/styles/partials/styles";
-				@import "./src/styles/partials/variables";
-				@import "./src/styles/partials/fonts";
-				@import "./src/styles/partials/mixins";
+				@import "./src/@styles/partials/mediaqueries"; 
+				@import "./src/@styles/partials/styles";
+				@import "./src/@styles/partials/variables";
+				@import "./src/@styles/partials/fonts";
+				@import "./src/@styles/partials/mixins";
 			`,
 			sassOptions: { },
 		}
