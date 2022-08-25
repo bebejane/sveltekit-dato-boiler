@@ -1,7 +1,7 @@
 import { env } from '$lib/env'
 import { SvelteApolloClient } from "svelte-apollo-client";
 import ApolloClientCore from '@apollo/client/core/core.cjs';
-const {InMemoryCache, gql} = ApolloClientCore;
+const { InMemoryCache, gql } = ApolloClientCore;
 
 const GRAPHQL_API_ENDPOINT = `https://graphql.datocms.com`;
 const GRAPHQL_API_TOKEN = env.VITE_GRAPHQL_API_TOKEN;
@@ -14,6 +14,6 @@ const client = SvelteApolloClient({
 });
 
 export {
-  client, 
+  client,
   gql
 }
