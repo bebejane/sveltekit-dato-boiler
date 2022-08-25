@@ -4,9 +4,9 @@ import graphql from '@rollup/plugin-graphql';
 /** @type {import('vite').UserConfig} */
 const config = {
 	plugins: [sveltekit(),graphql()],
-	optimizeDeps: {
-    exclude: ['@urql/svelte']
-  }
+	ssr:{
+		noExternal:true
+	}
 };
 
 export default config;
