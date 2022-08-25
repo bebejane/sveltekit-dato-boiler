@@ -1,5 +1,5 @@
 import { env } from '$lib/env'
-import { InMemoryCache, gql } from '@apollo/client/core/core.cjs';
+import { InMemoryCache, gql } from '@apollo/client/core/index.js';
 import { SvelteApolloClient } from "svelte-apollo-client";
 
 
