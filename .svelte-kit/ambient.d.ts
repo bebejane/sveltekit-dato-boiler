@@ -117,7 +117,6 @@ declare module '$env/static/private' {
 	export const npm_node_execpath: string;
 	export const npm_package_devDependencies__graphql_codegen_typescript_operations: string;
 	export const npm_config_version_tag_prefix: string;
-	export const NODE_ENV: string;
 	export const VITE_SITE_URL: string;
 	export const VITE_GRAPHQL_API_TOKEN: string;
 }

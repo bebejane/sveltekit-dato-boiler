@@ -1,5 +1,6 @@
 <script>
 	import '../@styles/index.scss';
+	import PostCount from '$lib/components/PostCount.svelte';
 </script>
 
 <svelte:head />
@@ -9,7 +10,7 @@
 		<li>
 			<a href="/">Home</a>
 			<a href="/settings">Settings</a>
-			<a href="/posts">Posts</a>
+			<a href="/posts">Posts (<PostCount/>)</a>
 		</li>
 	</ul>
 </nav>

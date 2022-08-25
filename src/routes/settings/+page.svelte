@@ -1,9 +1,10 @@
 <script lang="ts">
-	import Settings from './components/Settings.svelte'
+	import type { PageData } from './$types';
+	
 </script>
 
 <div id="settings">
-	<Settings/>
+	settings
 </div>
 
 <style lang="scss">
