@@ -5,11 +5,8 @@ import graphql from '@rollup/plugin-graphql';
 const config = {
 	plugins: [sveltekit(),graphql()],
 	optimizeDeps: {
-		exclude: ['@apollo/client', 'svelte-apollo'],
-	},
-	ssr: {
-		noExternal: ['@apollo/client', 'svelte-apollo'],
-	},
+    exclude: ['@urql/svelte']
+  }
 };
 
 export default config;
