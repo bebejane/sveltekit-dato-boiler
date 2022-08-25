@@ -6,3 +6,7 @@ node_modules
 .env.*
 !.env.example
 .vscode
+.vercel
+.svelte-kit/output
+.svelte-kit/build
+.svelte-kit/vercel*
