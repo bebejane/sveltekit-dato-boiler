@@ -11,7 +11,7 @@
 
 <div id="home">
 	{site.globalSeo?.siteName}
-	wilkommen yo
+	wilkommen yooo
 </div>
 
 <style lang="scss">
