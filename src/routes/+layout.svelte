@@ -9,6 +9,7 @@
 		<li>
 			<a href="/">Home</a>
 			<a href="/settings">Settings</a>
+			<a href="/posts">Posts</a>
 		</li>
 	</ul>
 </nav>
