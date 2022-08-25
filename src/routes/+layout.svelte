@@ -6,7 +6,10 @@
 
 <nav>
 	<ul>
-		<li>Menu</li>
+		<li>
+			<a href="/">Home</a>
+			<a href="/settings">Settings</a>
+		</li>
 	</ul>
 </nav>
 <main>
@@ -23,6 +26,10 @@
 		padding-top: var(--navbar-height);
 	}
 
+	a {
+		color: $white;
+	}
+
 	nav {
 		position: fixed;
 		top: 0;
@@ -31,10 +38,12 @@
 		color: #fff;
 		background-color: rgb(65, 33, 80);
 		min-height: calc(var(--navbar-height));
+
 		@include mq($until: tablet) {
 			background-color: $black !important;
 		}
 	}
+
 	ul {
 		display: flex;
 		flex-direction: row;
