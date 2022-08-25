@@ -8,9 +8,9 @@
 <nav>
 	<ul>
 		<li>
-			<a href="/">Home</a>
-			<a href="/settings">Settings</a>
-			<a href="/posts">Posts (<PostCount/>)</a>
+			<a sveltekit:prefetch href="/">Home</a>
+			<a sveltekit:prefetch href="/settings">Settings</a>
+			<a sveltekit:prefetch href="/posts">Posts (<PostCount/>)</a>
 		</li>
 	</ul>
 </nav>
