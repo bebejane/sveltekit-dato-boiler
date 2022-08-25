@@ -1,16 +1,13 @@
+import { browser } from '$app/env'
 import { env } from '$lib/env'
 import { InMemoryCache, gql } from '@apollo/client/core/index.js';
 import { SvelteApolloClient } from "svelte-apollo-client";
 
-
-const GRAPHQL_API_ENDPOINT = `https://graphql.datocms.com`;
-const GRAPHQL_API_TOKEN = env.VITE_GRAPHQL_API_TOKEN;
-
 const client = SvelteApolloClient({
-  uri: GRAPHQL_API_ENDPOINT,
+  uri: 'https://graphql.datocms.com',
   cache: new InMemoryCache(),
-  headers: { Authorization: `Bearer ${GRAPHQL_API_TOKEN}` },
-  ssrMode: true
+  headers: { Authorization: `Bearer ${env.VITE_GRAPHQL_API_TOKEN}` },
+  ssrMode: !browser
 });
 
 export {
