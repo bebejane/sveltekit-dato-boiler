@@ -6,7 +6,10 @@ const config = {
 	plugins: [sveltekit(),graphql()],
 	ssr:{
 		noExternal:true
-	}
+	},
+	optimizeDeps: {
+    exclude: ['@apollo/client']
+  }
 };
 
 export default config;
