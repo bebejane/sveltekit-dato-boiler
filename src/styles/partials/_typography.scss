@@ -1,0 +1,103 @@
+$body-line-height: 1.35em;
+$headline-line-height: 1.25;
+
+body,
+html{
+  font-size: 18px;
+  line-height: $headline-line-height;
+  color: $black;
+  font-weight: 570;
+  -webkit-font-smoothing: antialiased;
+  font-variant-numeric: oldstyle-nums;
+  font-family: $body-font;
+
+  @include mq($from: tablet) {
+    font-size: 26px;
+  }
+
+  @include mq($from: wide) {
+    font-size: 30px;
+  }
+}
+
+h1 {
+  font-size: 1rem;
+  font-weight: normal;
+  font-family: $headline-font;
+  padding-bottom: 1rem;
+
+  &.topMargin {
+    padding-top: .5rem;
+  }
+
+  &.bottomMargin {
+    padding-bottom: 1.5em;
+  }
+
+  &.start {
+    font-size: 1.5rem;
+    font-family: $body-font;
+    padding-bottom: .2em;
+    padding-top: .2em;
+  }
+
+}
+
+//Big h1, see mixins
+
+p.large, .large p {
+    font-size: .87rem;
+  }
+
+h2 {
+  font-size: .8em;
+  //letter-spacing: .1em;
+  padding-bottom: 1em;
+  font-weight: normal;
+  font-family: $headline-font;
+
+  &.topMargin {
+    padding-top: .5em;
+  }
+}
+
+h3 {
+  font-size: .45em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding-bottom: .5em;
+}
+
+nav, .medium, .medium p, button, span.medium {
+  font-size: .65rem;
+  font-family: "IndivisibleMedium";
+  font-weight: normal;
+  line-height: $body-line-height;
+}
+
+nav {
+  line-height: 2em !important;
+}
+
+
+figcaption, p.small, span.small, .tableList {
+  line-height: $body-line-height;
+  font-size: .57rem;
+  line-height: 1.4;
+  font-weight: normal;
+  font-family: "IndivisibleMedium";
+}
+
+.icon {
+  font-size: .5rem;
+  font-family: "IndivisibleMedium";
+}
+
+.bodyWeight {
+  font-family: $body-font !important;
+}
+
+.noMargin {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}

@@ -10,11 +10,11 @@ const config = {
 		scss: {
 			prependData: `
 				@use "sass:math";
-				@import "./static/styles/partials/mediaqueries"; 
-				@import "./static/styles/partials/styles";
-				@import "./static/styles/partials/variables";
-				@import "./static/styles/partials/fonts";
-				@import "./static/styles/partials/mixins";
+				@import "./src/styles/partials/mediaqueries"; 
+				@import "./src/styles/partials/styles";
+				@import "./src/styles/partials/variables";
+				@import "./src/styles/partials/fonts";
+				@import "./src/styles/partials/mixins";
 			`,
 			sassOptions: { },
 		}

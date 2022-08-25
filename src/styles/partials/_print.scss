@@ -12,7 +12,6 @@ though, go for it.
 
 * {
   background: transparent !important;
-  color: black !important;
   text-shadow: none !important;
   filter: none !important;
   -ms-filter: none !important;
@@ -56,15 +55,11 @@ img {
 }
 
 img {
-  max-width: none !important;
+  //max-width: none !important;
   width: 100%;
 }
 
 @page {
-  margin-top: 1.8cm;
-  margin-left: 2cm;
-  margin-right: 2cm;
-  margin-bottom: 1.8cm;
 }
 
 p,

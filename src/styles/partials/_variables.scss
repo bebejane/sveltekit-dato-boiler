@@ -1,0 +1,39 @@
+// COLOR
+$black: #121212;
+$white: #FCFCFC;
+$gray:  #969696;
+$red:   #DF3600;
+$light-gray: #F2F2F2;
+$mid-gray: #D4D4D4;
+$warm-gray:  #D2BD93;
+$copper:     #876058;
+$copper-light: #AF685A; 
+$black-menu: rgba($black, .65);
+$white-menu: rgba($white, .65);
+
+.white {
+  color: $white;
+}
+
+.red {
+  color: $red !important;
+}
+
+.copper {
+  color: $copper-light;
+}
+
+//BORDER
+$line: 1px solid $black;
+
+// MARGINS & SPACES
+$max-width: 1440px;
+$navbarHeight: 4rem;
+
+$margin: 3rem;
+$small-margin: 2rem;
+
+@mixin maxWidth() {
+  max-width: $max-width;
+  margin: auto;
+}

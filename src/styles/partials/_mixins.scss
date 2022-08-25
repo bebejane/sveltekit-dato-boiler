@@ -1,0 +1,50 @@
+// REMOVE MARGIN FROM LAST COLUMN IN GRID
+@mixin resetLastColumn($lastColumn) {
+  $lastColumn: $lastColumn + n;
+  &:nth-of-type(#{$lastColumn}) {
+    margin-right: 0;
+  }
+}
+
+// GRID
+$columns: 16;
+$gutter: 1.47%;
+$column-width: math.div((100% - (($columns - 1) * $gutter)), $columns);
+
+// WIDTH OF UNITS IN GRID WITHOUT LAST GUTTER
+@function spanGrid($amount) {
+  @return $column-width * $amount + $gutter * ($amount - 1);
+}
+
+$totalWidth12cols: spanGrid(12);
+$difference12: $totalWidth12cols / 100%;
+$gutter-nested: math.div($gutter,$difference12); //Denna ska göras om
+
+// WIDTH OF UNITS IN GRID WITH  LAST GUTTER
+@function spanGridWithGutter($amount) {
+  @return $column-width * $amount + $gutter * $amount;
+}
+
+@function spanNestedGrid($container, $element, $withGutter: false) {
+  $totalWidth: spanGrid($container);
+  $nestedWidth: (($totalWidth - (($container - 1) * $gutter)) / $container);
+  $difference: $totalWidth / 100%;
+  $width: ($nestedWidth * $element + $gutter * ($element - 1)) / $difference;
+  
+  @if $withGutter{
+    $width: $width + nestedGridGutter($container)
+  }
+  @return $width;
+}
+
+@function nestedGridGutter($container) {
+  $temp: 100% / spanGrid($container);
+  @return $temp * $gutter;
+}
+
+//Typography
+@mixin h1Big() {
+  font-size: 3rem;
+  font-family: $body-font;
+  line-height: 1em;
+}
