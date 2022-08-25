@@ -1,11 +1,8 @@
 <script>
-  //import '../styles/index.scss';
-	export let data;
+	import '../styles/index.scss';
 </script>
 
-<svelte:head>
-	
-</svelte:head>
+<svelte:head />
 
 <nav>
 	<ul>
@@ -34,11 +31,10 @@
 		color: #fff;
 		background-color: rgb(65, 33, 80);
 		min-height: calc(var(--navbar-height));
-    @include mq($until: tablet) {
-		  background-color: pink !important;
-	  }
+		@include mq($until: tablet) {
+			background-color: $black !important;
+		}
 	}
-
 	ul {
 		display: flex;
 		flex-direction: row;

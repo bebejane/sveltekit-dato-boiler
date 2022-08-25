@@ -14,12 +14,13 @@
 </svelte:head>
 
 <div id="home">
+	<p>
 	page
+</p>
 </div>
 
 <style lang="scss">
 	#home {
-		
 		display: flex;
 		align-items: center;
 		justify-content: center;

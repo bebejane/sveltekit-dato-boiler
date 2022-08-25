@@ -1,3 +1,4 @@
+@use "sass:math";
 // REMOVE MARGIN FROM LAST COLUMN IN GRID
 @mixin resetLastColumn($lastColumn) {
   $lastColumn: $lastColumn + n;
@@ -17,7 +18,7 @@ $column-width: math.div((100% - (($columns - 1) * $gutter)), $columns);
 }
 
 $totalWidth12cols: spanGrid(12);
-$difference12: $totalWidth12cols / 100%;
+$difference12: math.div($totalWidth12cols, 100%);
 $gutter-nested: math.div($gutter,$difference12); //Denna ska göras om
 
 // WIDTH OF UNITS IN GRID WITH  LAST GUTTER
