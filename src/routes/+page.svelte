@@ -11,6 +11,7 @@
 
 <div id="home">
 	{site.globalSeo?.siteName}
+	wilkommen
 </div>
 
 <style lang="scss">
