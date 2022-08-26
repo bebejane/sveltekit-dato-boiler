@@ -1,9 +1,9 @@
-import { client } from "$lib/client";
+import { apiQuery } from "$lib/client";
 import { GlobalDocument } from "$lib/graphql";
 
 export async function load() {
 
-  const { data: { site } } = await client.query(GlobalDocument).result() as { data: GlobalQuery }
+  const {site} = await apiQuery<GlobalQuery>(GlobalDocument)
 
   return { site }
 }

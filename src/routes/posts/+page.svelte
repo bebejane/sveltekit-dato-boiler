@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PageData } from '../../../.svelte-kit/types/src/routes/post/$types';
+	import type { PageData } from './$types';
 	export let data: PageData;
 	const { posts } = data;
 </script>
@@ -13,4 +13,7 @@
 	{/each}
 </ul>
 <style lang="scss">
+	ul{
+		list-style: none;
+	}
 </style>

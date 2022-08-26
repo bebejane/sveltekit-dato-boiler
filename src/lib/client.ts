@@ -1,6 +1,6 @@
 import { browser } from '$app/env'
 import { env } from '$lib/env'
-import { InMemoryCache, gql, type DocumentNode, type WatchQueryOptions } from '@apollo/client/core/index.js';
+import { InMemoryCache, gql, type DocumentNode, type WatchQueryOptions, type QueryOptions } from '@apollo/client/core/index.js';
 import { SvelteApolloClient, type ReadableQuery } from "svelte-apollo-client";
 
 const client = SvelteApolloClient({
@@ -15,12 +15,18 @@ const client = SvelteApolloClient({
   }
 });
 
-const apiQuery = <QueryType>(doc : DocumentNode, opt : WatchQueryOptions) : ReadableQuery<QueryType> => {
+const apiQuery = async <QueryType>(doc: DocumentNode, opt?: WatchQueryOptions) : Promise<QueryType> => {
+  const res = await apiQueryAsync<QueryType>(doc, opt).result()
+  return res.data
+}
+
+const apiQueryAsync = <QueryType>(doc: DocumentNode, opt?: WatchQueryOptions) : ReadableQuery<QueryType> => {
   return client.query(doc, opt)
 }
 
 export {
   client, 
   gql,
-  apiQuery
+  apiQuery,
+  apiQueryAsync
 }

@@ -1,5 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import colors  from '$lib/styles/exports.module.scss'
+	console.log(colors)
 	export let data: PageData;
 	const { site } = data;
 </script>

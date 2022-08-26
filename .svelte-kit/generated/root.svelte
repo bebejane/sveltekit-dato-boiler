@@ -37,7 +37,7 @@
 </script>
 
 {#if components[1]}
-	<svelte:component this={components[0]} data={data_0}>
+	<svelte:component this={components[0]} data={data_0} {errors}>
 		<svelte:component this={components[1]} data={data_1}/>
 	</svelte:component>
 {:else}

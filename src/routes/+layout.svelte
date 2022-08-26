@@ -1,5 +1,5 @@
 <script>
-	import '../@styles/index.scss';
+	import '$lib/styles/index.scss';
 	import PostCount from '$lib/components/PostCount.svelte';
 </script>
 
@@ -19,17 +19,15 @@
 </main>
 
 <style lang="scss">
-	:root {
-		--navbar-height: 65px;
-	}
 
 	main {
 		padding: var(--padding);
-		padding-top: var(--navbar-height);
+		padding-top: calc(var(--navbar-height) + var(--padding));
 	}
 
 	a {
 		color: $white;
+		font-size: 14px;
 	}
 
 	nav {

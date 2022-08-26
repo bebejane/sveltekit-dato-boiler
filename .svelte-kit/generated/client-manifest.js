@@ -6,12 +6,13 @@ export const nodes = [
 	() => import('./nodes/2'),
 	() => import('./nodes/3'),
 	() => import('./nodes/4'),
-	() => import('./nodes/5')
+	() => import('./nodes/5'),
+	() => import('./nodes/6')
 ];
 
 export const dictionary = {
-	"": [~2],
-	"posts": [~3],
-	"settings": [~5],
-	"posts/[slug]": [~4]
+	"": [~3],
+	"posts": [~4],
+	"settings": [~6],
+	"posts/[slug]": [~5,[],[2]]
 };

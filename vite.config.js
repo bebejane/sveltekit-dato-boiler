@@ -3,7 +3,7 @@ import graphql from '@rollup/plugin-graphql';
 
 /** @type {import('vite').UserConfig} */
 const config = {
-	plugins: [sveltekit(),graphql()],
+	plugins: [sveltekit(), graphql()],
 	ssr:{
 		noExternal:true
 	},

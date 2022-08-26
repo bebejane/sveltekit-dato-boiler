@@ -8,11 +8,11 @@ const config = {
 		scss: {
 			prependData: `
 				@use "sass:math";
-				@import "./src/@styles/partials/mediaqueries"; 
-				@import "./src/@styles/partials/styles";
-				@import "./src/@styles/partials/variables";
-				@import "./src/@styles/partials/fonts";
-				@import "./src/@styles/partials/mixins";
+				@import "./src/lib/styles/partials/mediaqueries"; 
+				@import "./src/lib/styles/partials/styles";
+				@import "./src/lib/styles/partials/variables";
+				@import "./src/lib/styles/partials/fonts";
+				@import "./src/lib/styles/partials/mixins";
 			`,
 			sassOptions: { },
 		}
