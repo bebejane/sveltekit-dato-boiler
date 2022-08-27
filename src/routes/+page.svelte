@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import colors  from '$lib/styles/exports.module.scss'
-	console.log(colors)
+	import Col from './Col.svelte';
+	import Row from './Row.svelte';
 	export let data: PageData;
 	const { site } = data;
 </script>
@@ -11,10 +11,18 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<div id="home">
-	{site.globalSeo?.siteName}
-	wilkommen yooo
-</div>
+<Row>
+	<Col label="1" size="20%"/>
+	<Col label="2" size="20%"/>
+	<Col label="3" size="20%"/>
+	<Col label="4" size="20%"/>
+	<Col label="5" size="20%"/>
+</Row>
+<Row>
+	<Col label="1x" size="20%"/>
+	<Col label="2x" size="30%"/>
+	
+</Row>
 
 <style lang="scss">
 	

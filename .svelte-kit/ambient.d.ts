@@ -31,6 +31,7 @@ declare module '$env/static/private' {
 	export const ORIGINAL_XDG_CURRENT_DESKTOP: string;
 	export const MallocNanoZone: string;
 	export const npm_package_dependencies_svelte_apollo_client: string;
+	export const npm_package_dependencies__sveltejs_adapter_vercel: string;
 	export const npm_package_devDependencies_svelte_preprocess: string;
 	export const npm_package_devDependencies__sveltejs_kit: string;
 	export const npm_package_private: string;
@@ -120,7 +121,6 @@ declare module '$env/static/private' {
 	export const npm_node_execpath: string;
 	export const npm_package_devDependencies__graphql_codegen_typescript_operations: string;
 	export const npm_config_version_tag_prefix: string;
-	export const NODE_ENV: string;
 	export const VITE_SITE_URL: string;
 	export const VITE_GRAPHQL_API_TOKEN: string;
 }

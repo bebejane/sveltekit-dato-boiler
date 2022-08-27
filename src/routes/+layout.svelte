@@ -3,8 +3,6 @@
 	import PostCount from '$lib/components/PostCount.svelte';
 </script>
 
-<svelte:head />
-
 <nav>
 	<ul>
 		<li>
@@ -14,15 +12,21 @@
 		</li>
 	</ul>
 </nav>
+
 <main>
 	<slot />
 </main>
 
 <style lang="scss">
 
+	:global(img){
+		width: 100%;
+	}
 	main {
-		padding: var(--padding);
-		padding-top: calc(var(--navbar-height) + var(--padding));
+		padding-left: var(--outer-margin);
+		padding-right: var(--outer-margin);
+		padding-top: calc(var(--navbar-height));
+		margin-top: var(--outer-margin);
 	}
 
 	a {
@@ -34,11 +38,11 @@
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 100%;
+		width: 100vw;
 		color: #fff;
 		background-color: rgb(65, 33, 80);
 		min-height: calc(var(--navbar-height));
-
+		z-index: 100;
 		@include mq($until: tablet) {
 			background-color: $black !important;
 		}

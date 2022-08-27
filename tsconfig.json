@@ -22,7 +22,8 @@
 		"./tests/**/*.js",
 		"./tests/**/*.ts",
 		"./tests/**/*.svelte",
-		"./src/**/*.graphql"
+		"./src/**/*.graphql",
+		"./src/**/*.gql"
 	],
 	"typeRoots": ["./src/@types/**/*"],
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias

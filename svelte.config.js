@@ -3,7 +3,9 @@ import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	compilerOptions: {hydratable:true},
+	compilerOptions: {
+		hydratable:true
+	},
 	preprocess: preprocess({
 		scss: {
 			prependData: `
