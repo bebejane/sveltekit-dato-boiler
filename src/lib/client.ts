@@ -1,6 +1,6 @@
-import { browser } from '$app/env'
+import { browser } from '$app/environment'
 import { env } from './env';
-import { InMemoryCache, gql, type DocumentNode, type WatchQueryOptions, type QueryOptions } from '@apollo/client/core/index.js';
+import { InMemoryCache, gql, type DocumentNode, type WatchQueryOptions } from '@apollo/client/core/index.js';
 import { SvelteApolloClient, type ReadableQuery } from "svelte-apollo-client";
 
 const client = SvelteApolloClient({

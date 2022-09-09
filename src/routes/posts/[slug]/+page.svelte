@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	
 	import SvelteMarkdown from 'svelte-markdown'
 	import { Image } from 'svelte-datocms'
 	export let data: PageData;

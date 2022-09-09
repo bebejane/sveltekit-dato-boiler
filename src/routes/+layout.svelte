@@ -1,32 +1,32 @@
-<script>
+<script lang="ts">
+
 	import '$lib/styles/index.scss';
+	import PageTransition from '$lib/components/PageTransition.svelte';
 	import PostCount from '$lib/components/PostCount.svelte';
+	import type { PageData } from './$types';
+
+	export let data : PageData;
+	
 </script>
-
-<nav>
-	<ul>
-		<li>
-			<a sveltekit:prefetch href="/">Home</a>
-			<a sveltekit:prefetch href="/settings">Settings</a>
-			<a sveltekit:prefetch href="/posts">Posts (<PostCount/>)</a>
-		</li>
-	</ul>
-</nav>
-
-<main>
-	<slot />
-</main>
+	<main>
+		<nav>
+			<ul>
+				<li>
+					<a sveltekit:prefetch href="/">Home</a>
+					<a sveltekit:prefetch href="/settings">Settings</a>
+					<a sveltekit:prefetch href="/posts">Posts (<PostCount />)</a>
+				</li>
+			</ul>
+		</nav>
+		<PageTransition url={data.pathname}>
+			<slot />
+		</PageTransition>
+	</main>
 
 <style lang="scss">
-
-	:global(img){
-		width: 100%;
-	}
+	
 	main {
-		padding-left: var(--outer-margin);
-		padding-right: var(--outer-margin);
 		padding-top: calc(var(--navbar-height));
-		margin-top: var(--outer-margin);
 	}
 
 	a {
