@@ -13,11 +13,13 @@ type LayoutParentData = EnsureParentData<{}>;
 
 export type PageServerLoad<OutputData extends OutputDataShape<PageServerParentData> = OutputDataShape<PageServerParentData>> = Kit.ServerLoad<RouteParams, PageServerParentData, OutputData>;
 export type PageServerLoadEvent = Parameters<PageServerLoad>[0];
-export type Errors = null;
+export type ActionData = unknown;
 export type PageServerData = Kit.AwaitedProperties<Awaited<ReturnType<typeof import('../../../../src/routes/+page.server.js').load>>>;
 export type PageData = Omit<PageParentData, keyof PageServerData> & PageServerData;
 export type Action = Kit.Action<RouteParams>
+export type Actions = Kit.Actions<RouteParams>
 export type LayoutServerLoad<OutputData extends Partial<App.PageData> & Record<string, any> | void = Partial<App.PageData> & Record<string, any> | void> = Kit.ServerLoad<LayoutParams, LayoutServerParentData, OutputData>;
 export type LayoutServerLoadEvent = Parameters<LayoutServerLoad>[0];
 export type LayoutServerData = Kit.AwaitedProperties<Awaited<ReturnType<typeof import('../../../../src/routes/+layout.server.js').load>>>;
 export type LayoutData = Omit<LayoutParentData, keyof LayoutServerData> & LayoutServerData;
+export type RequestEvent = Kit.RequestEvent<RouteParams>;

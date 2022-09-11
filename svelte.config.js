@@ -25,7 +25,12 @@ const config = {
 		  external: [],
       split: false
     })
-  }
+  },
+	vitePlugin:{
+		experimental:{
+			inspector:true
+		}
+	}
 };
 
 export default config;

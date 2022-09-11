@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { apiQuery} from "$lib/client";
 import { AllPostsDocument } from "$lib/graphql";
 import { invalid } from '@sveltejs/kit';
@@ -20,8 +21,8 @@ export type Success = {
   success: boolean
 }
 
-export const actions : Actions = {
-    default: async({request}) : Promise<Validation | Success> => {
+export const actions = {
+    default: async({request}: import('./$types').RequestEvent) : Promise<Validation | Success> => {
 
       const validation : Validation = { missing:{}, error:{} }
 
@@ -40,4 +41,4 @@ export const actions : Actions = {
       
       return { success: true }
     }
-}
+};null as any as Actions;

@@ -15,12 +15,11 @@
 					<a sveltekit:prefetch href="/">Home</a>
 					<a sveltekit:prefetch href="/settings">Settings</a>
 					<a sveltekit:prefetch href="/posts">Posts (<PostCount />)</a>
+					<a sveltekit:prefetch href="/special">Spcial</a>
 				</li>
 			</ul>
 		</nav>
-		<PageTransition url={data.pathname}>
-			<slot />
-		</PageTransition>
+		<slot />
 	</main>
 
 <style lang="scss">

@@ -5,16 +5,14 @@ const config =  {
 	dedupeFragments: true,
 	pureMagicComment: false,
 	exportFragmentSpreadSubTypes: true,
-	namingConvention: "keep",
-	maybeValue: "T"
+	namingConvention: "keep"
 }
 
 module.exports = {
 	schema: {
 		"https://graphql.datocms.com": {
 			headers: {
-				Authorization: process.env.VITE_GRAPHQL_API_TOKEN,
-				"X-Exclude-Invalid": true
+				Authorization: process.env.VITE_GRAPHQL_API_TOKEN
 			},
 		},
 	},

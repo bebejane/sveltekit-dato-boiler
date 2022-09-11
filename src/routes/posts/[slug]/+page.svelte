@@ -8,7 +8,6 @@
 	
 </script>
 	
-
 <div id="posts">
 	<h1>{post?.title}</h1>
 	<SvelteMarkdown source={post?.content}/>

@@ -1,5 +1,5 @@
-type Maybe<T> = T;
-type InputMaybe<T> = T;
+type Maybe<T> = T | null;
+type InputMaybe<T> = Maybe<T>;
 type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
@@ -1835,11 +1835,11 @@ type PostRecord = RecordInterface & {
   content?: Maybe<Scalars['String']>;
   createdAt: Scalars['DateTime'];
   id: Scalars['ItemId'];
-  image: FileField;
-  slug: Scalars['String'];
-  title: Scalars['String'];
+  image?: Maybe<FileField>;
+  slug?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
   updatedAt: Scalars['DateTime'];
-  video?: Maybe<VideoFileField>;
+  video?: Maybe<FileField>;
 };
 
 
@@ -2500,82 +2500,6 @@ type UploadWidthFilter = {
   neq?: InputMaybe<Scalars['IntType']>;
 };
 
-type VideoFileField = FileFieldInterface & {
-  __typename?: 'VideoFileField';
-  _createdAt: Scalars['DateTime'];
-  _updatedAt: Scalars['DateTime'];
-  alt?: Maybe<Scalars['String']>;
-  author?: Maybe<Scalars['String']>;
-  basename: Scalars['String'];
-  blurUpThumb?: Maybe<Scalars['String']>;
-  blurhash?: Maybe<Scalars['String']>;
-  colors: Array<ColorField>;
-  copyright?: Maybe<Scalars['String']>;
-  customData: Scalars['CustomData'];
-  exifInfo: Scalars['CustomData'];
-  filename: Scalars['String'];
-  focalPoint?: Maybe<focalPoint>;
-  format: Scalars['String'];
-  height?: Maybe<Scalars['IntType']>;
-  id: Scalars['UploadId'];
-  md5: Scalars['String'];
-  mimeType: Scalars['String'];
-  notes?: Maybe<Scalars['String']>;
-  responsiveImage?: Maybe<ResponsiveImage>;
-  size: Scalars['IntType'];
-  smartTags: Array<Scalars['String']>;
-  tags: Array<Scalars['String']>;
-  title?: Maybe<Scalars['String']>;
-  url: Scalars['String'];
-  video: UploadVideoField;
-  width?: Maybe<Scalars['IntType']>;
-};
-
-
-type VideoFileFieldaltArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-type VideoFileFieldblurUpThumbArgs = {
-  imgixParams?: InputMaybe<ImgixParams>;
-  punch?: InputMaybe<Scalars['Float']>;
-  quality?: InputMaybe<Scalars['Int']>;
-  size?: InputMaybe<Scalars['Int']>;
-};
-
-
-type VideoFileFieldcustomDataArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-type VideoFileFieldfocalPointArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-type VideoFileFieldresponsiveImageArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  imgixParams?: InputMaybe<ImgixParams>;
-  locale?: InputMaybe<SiteLocale>;
-  sizes?: InputMaybe<Scalars['String']>;
-};
-
-
-type VideoFileFieldtitleArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-type VideoFileFieldurlArgs = {
-  imgixParams?: InputMaybe<ImgixParams>;
-};
-
 enum VideoMp4Res {
   high = 'high',
   low = 'low',
@@ -2588,28 +2512,28 @@ type focalPoint = {
   y: Scalars['FloatType'];
 };
 
-type ImageFragment = { __typename?: 'FileField', alt?: string, basename: string, format: string, height?: any, id: any, mimeType: string, size: any, title?: string, url: string, width?: any, customData: any, responsiveImage?: { __typename?: 'ResponsiveImage', alt?: string, aspectRatio: any, base64?: string, bgColor?: string, height: any, sizes: string, src: string, srcSet: string, webpSrcSet: string, title?: string, width: any }, colors: Array<{ __typename?: 'ColorField', blue: any, green: any, red: any }> };
+type ImageFragment = { __typename?: 'FileField', alt?: string | null, basename: string, format: string, height?: any | null, id: any, mimeType: string, size: any, title?: string | null, url: string, width?: any | null, customData: any, responsiveImage?: { __typename?: 'ResponsiveImage', alt?: string | null, aspectRatio: any, base64?: string | null, bgColor?: string | null, height: any, sizes: string, src: string, srcSet: string, webpSrcSet: string, title?: string | null, width: any } | null, colors: Array<{ __typename?: 'ColorField', blue: any, green: any, red: any }> };
 
-type SiteFragment = { __typename?: 'Site', favicon: Array<{ __typename?: 'Tag', attributes?: any, content?: string, tag: string }>, globalSeo?: { __typename?: 'GlobalSeoField', facebookPageUrl?: string, siteName?: string, titleSuffix?: string, twitterAccount?: string, fallbackSeo?: { __typename?: 'SeoField', description?: string, title?: string, twitterCard?: string, image?: { __typename?: 'FileField', alt?: string, basename: string, format: string, height?: any, id: any, mimeType: string, size: any, title?: string, url: string, width?: any, customData: any, responsiveImage?: { __typename?: 'ResponsiveImage', alt?: string, aspectRatio: any, base64?: string, bgColor?: string, height: any, sizes: string, src: string, srcSet: string, webpSrcSet: string, title?: string, width: any }, colors: Array<{ __typename?: 'ColorField', blue: any, green: any, red: any }> } } } };
+type SiteFragment = { __typename?: 'Site', favicon: Array<{ __typename?: 'Tag', attributes?: any | null, content?: string | null, tag: string }>, globalSeo?: { __typename?: 'GlobalSeoField', facebookPageUrl?: string | null, siteName?: string | null, titleSuffix?: string | null, twitterAccount?: string | null, fallbackSeo?: { __typename?: 'SeoField', description?: string | null, title?: string | null, twitterCard?: string | null, image?: { __typename?: 'FileField', alt?: string | null, basename: string, format: string, height?: any | null, id: any, mimeType: string, size: any, title?: string | null, url: string, width?: any | null, customData: any, responsiveImage?: { __typename?: 'ResponsiveImage', alt?: string | null, aspectRatio: any, base64?: string | null, bgColor?: string | null, height: any, sizes: string, src: string, srcSet: string, webpSrcSet: string, title?: string | null, width: any } | null, colors: Array<{ __typename?: 'ColorField', blue: any, green: any, red: any }> } | null } | null } | null };
 
 type GlobalQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type GlobalQuery = { __typename?: 'Query', site: { __typename?: 'Site', favicon: Array<{ __typename?: 'Tag', attributes?: any, content?: string, tag: string }>, globalSeo?: { __typename?: 'GlobalSeoField', facebookPageUrl?: string, siteName?: string, titleSuffix?: string, twitterAccount?: string, fallbackSeo?: { __typename?: 'SeoField', description?: string, title?: string, twitterCard?: string, image?: { __typename?: 'FileField', alt?: string, basename: string, format: string, height?: any, id: any, mimeType: string, size: any, title?: string, url: string, width?: any, customData: any, responsiveImage?: { __typename?: 'ResponsiveImage', alt?: string, aspectRatio: any, base64?: string, bgColor?: string, height: any, sizes: string, src: string, srcSet: string, webpSrcSet: string, title?: string, width: any }, colors: Array<{ __typename?: 'ColorField', blue: any, green: any, red: any }> } } } } };
+type GlobalQuery = { __typename?: 'Query', site: { __typename?: 'Site', favicon: Array<{ __typename?: 'Tag', attributes?: any | null, content?: string | null, tag: string }>, globalSeo?: { __typename?: 'GlobalSeoField', facebookPageUrl?: string | null, siteName?: string | null, titleSuffix?: string | null, twitterAccount?: string | null, fallbackSeo?: { __typename?: 'SeoField', description?: string | null, title?: string | null, twitterCard?: string | null, image?: { __typename?: 'FileField', alt?: string | null, basename: string, format: string, height?: any | null, id: any, mimeType: string, size: any, title?: string | null, url: string, width?: any | null, customData: any, responsiveImage?: { __typename?: 'ResponsiveImage', alt?: string | null, aspectRatio: any, base64?: string | null, bgColor?: string | null, height: any, sizes: string, src: string, srcSet: string, webpSrcSet: string, title?: string | null, width: any } | null, colors: Array<{ __typename?: 'ColorField', blue: any, green: any, red: any }> } | null } | null } | null } };
 
 type MenuQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type MenuQuery = { __typename?: 'Query', allMenus: Array<{ __typename?: 'MenuRecord', title?: string, children?: Array<{ __typename?: 'MenuRecord', title?: string, link?: { __typename: 'PostRecord', id: any } }> }> };
+type MenuQuery = { __typename?: 'Query', allMenus: Array<{ __typename?: 'MenuRecord', title?: string | null, children?: Array<{ __typename?: 'MenuRecord', title?: string | null, link?: { __typename: 'PostRecord', id: any } | null } | null> | null }> };
 
 type AllPostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type AllPostsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'PostRecord', id: any, title: string, content?: string, slug: string, image: { __typename?: 'FileField', alt?: string, basename: string, format: string, height?: any, id: any, mimeType: string, size: any, title?: string, url: string, width?: any, customData: any, responsiveImage?: { __typename?: 'ResponsiveImage', alt?: string, aspectRatio: any, base64?: string, bgColor?: string, height: any, sizes: string, src: string, srcSet: string, webpSrcSet: string, title?: string, width: any }, colors: Array<{ __typename?: 'ColorField', blue: any, green: any, red: any }> } }> };
+type AllPostsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'PostRecord', id: any, title?: string | null, content?: string | null, slug?: string | null, image?: { __typename?: 'FileField', alt?: string | null, basename: string, format: string, height?: any | null, id: any, mimeType: string, size: any, title?: string | null, url: string, width?: any | null, customData: any, responsiveImage?: { __typename?: 'ResponsiveImage', alt?: string | null, aspectRatio: any, base64?: string | null, bgColor?: string | null, height: any, sizes: string, src: string, srcSet: string, webpSrcSet: string, title?: string | null, width: any } | null, colors: Array<{ __typename?: 'ColorField', blue: any, green: any, red: any }> } | null }> };
 
 type PostQueryVariables = Exact<{
   slug?: InputMaybe<Scalars['String']>;
 }>;
 
 
-type PostQuery = { __typename?: 'Query', post?: { __typename?: 'PostRecord', id: any, title: string, content?: string, slug: string, image: { __typename?: 'FileField', alt?: string, basename: string, format: string, height?: any, id: any, mimeType: string, size: any, title?: string, url: string, width?: any, customData: any, responsiveImage?: { __typename?: 'ResponsiveImage', alt?: string, aspectRatio: any, base64?: string, bgColor?: string, height: any, sizes: string, src: string, srcSet: string, webpSrcSet: string, title?: string, width: any }, colors: Array<{ __typename?: 'ColorField', blue: any, green: any, red: any }> } } };
+type PostQuery = { __typename?: 'Query', post?: { __typename?: 'PostRecord', id: any, title?: string | null, content?: string | null, slug?: string | null, image?: { __typename?: 'FileField', alt?: string | null, basename: string, format: string, height?: any | null, id: any, mimeType: string, size: any, title?: string | null, url: string, width?: any | null, customData: any, responsiveImage?: { __typename?: 'ResponsiveImage', alt?: string | null, aspectRatio: any, base64?: string | null, bgColor?: string | null, height: any, sizes: string, src: string, srcSet: string, webpSrcSet: string, title?: string | null, width: any } | null, colors: Array<{ __typename?: 'ColorField', blue: any, green: any, red: any }> } | null } | null };

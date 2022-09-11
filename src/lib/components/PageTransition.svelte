@@ -2,7 +2,7 @@
 <script>
   import { fade, } from "svelte/transition";
   export let url = '';
-  const pageTransitionDuration = 1000;
+  const pageTransitionDuration = 300;
   let path = '';
   $: path = url;
 
